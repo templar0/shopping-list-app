@@ -1,0 +1,11 @@
+# Playwright screenshots
+.playwright-mcp/
+
+# Zip files
+*.zip
+
+# Text notes
+*.txt
+
+# Local settings
+.claude/
