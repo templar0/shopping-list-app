@@ -59,7 +59,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 20px;
             transition: background 0.3s;
         }
 
@@ -76,7 +76,7 @@
         header {
             background: var(--header-bg);
             color: white;
-            padding: 24px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -84,13 +84,19 @@
         }
 
         header h1 {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
         }
 
-        .theme-toggle {
-            width: 44px;
-            height: 44px;
+        .header-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .header-btn {
+            width: 40px;
+            height: 40px;
             border: none;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
@@ -98,17 +104,173 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             transition: background 0.2s, transform 0.2s;
+            color: white;
         }
 
-        .theme-toggle:hover {
+        .header-btn:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: scale(1.1);
         }
 
+        /* Auth Section */
+        .auth-section {
+            padding: 30px 20px;
+            background: var(--container-bg);
+        }
+
+        .auth-title {
+            text-align: center;
+            color: var(--item-text);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .auth-form input {
+            padding: 12px 16px;
+            border: 2px solid var(--input-border);
+            border-radius: 8px;
+            font-size: 16px;
+            background: var(--input-bg);
+            color: var(--input-text);
+            transition: border-color 0.2s;
+        }
+
+        .auth-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .auth-form button {
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .auth-form button:hover {
+            background: #5a6fd6;
+        }
+
+        .auth-form button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        .auth-toggle {
+            text-align: center;
+            margin-top: 15px;
+            color: var(--stats-text);
+            font-size: 14px;
+        }
+
+        .auth-toggle a {
+            color: #667eea;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .auth-error {
+            color: #e53935;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* User Info */
+        .user-info {
+            padding: 12px 20px;
+            background: var(--stats-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--stats-text);
+        }
+
+        .user-email {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 200px;
+        }
+
+        .logout-btn {
+            padding: 6px 12px;
+            background: transparent;
+            color: #e53935;
+            border: 1px solid #e53935;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: #e53935;
+            color: white;
+        }
+
+        /* Date Section */
+        .date-section {
+            padding: 15px 20px;
+            background: var(--container-bg);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .date-nav-btn {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: var(--item-bg);
+            color: var(--item-text);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .date-nav-btn:hover {
+            background: var(--item-hover);
+        }
+
+        .date-display {
+            padding: 8px 16px;
+            background: var(--item-bg);
+            border-radius: 8px;
+            color: var(--item-text);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+
+        .date-display:hover {
+            background: var(--item-hover);
+        }
+
         .input-section {
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             gap: 10px;
             border-bottom: 1px solid var(--border-color);
@@ -137,7 +299,7 @@
         }
 
         .input-section button {
-            padding: 12px 24px;
+            padding: 12px 20px;
             background: #667eea;
             color: white;
             border: none;
@@ -151,9 +313,14 @@
             background: #5a6fd6;
         }
 
+        .input-section button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
         .list-container {
             padding: 10px 20px 20px;
-            max-height: 400px;
+            max-height: 350px;
             overflow-y: auto;
             background: var(--container-bg);
             transition: background 0.3s;
@@ -256,7 +423,7 @@
         }
 
         .stats {
-            padding: 16px 20px;
+            padding: 14px 20px;
             background: var(--stats-bg);
             text-align: center;
             color: var(--stats-text);
@@ -264,25 +431,60 @@
             border-top: 1px solid var(--border-color);
             transition: background 0.3s, color 0.3s, border-color 0.3s;
         }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>쇼핑 리스트</h1>
-            <button class="theme-toggle" id="themeToggle" title="테마 변경">🌙</button>
+            <div class="header-buttons">
+                <button class="header-btn" id="themeToggle" title="테마 변경">🌙</button>
+            </div>
         </header>
 
-        <div class="input-section">
-            <input type="text" id="itemInput" placeholder="아이템을 입력하세요..." autofocus>
-            <button id="addBtn">추가</button>
+        <!-- Auth Section -->
+        <div id="authSection" class="auth-section">
+            <h2 class="auth-title" id="authTitle">로그인</h2>
+            <form class="auth-form" id="authForm">
+                <input type="email" id="emailInput" placeholder="이메일" required>
+                <input type="password" id="passwordInput" placeholder="비밀번호 (최소 6자)" required minlength="6">
+                <button type="submit" id="authSubmitBtn">로그인</button>
+            </form>
+            <div class="auth-toggle">
+                <span id="authToggleText">계정이 없으신가요?</span>
+                <a id="authToggleLink">회원가입</a>
+            </div>
+            <div class="auth-error hidden" id="authError"></div>
         </div>
 
-        <div class="list-container" id="listContainer">
-            <div class="empty-message">아이템을 추가해 주세요</div>
-        </div>
+        <!-- Main App Section -->
+        <div id="appSection" class="hidden">
+            <div class="user-info">
+                <span class="user-email" id="userEmail"></span>
+                <button class="logout-btn" id="logoutBtn">로그아웃</button>
+            </div>
 
-        <div class="stats" id="stats"></div>
+            <div class="date-section">
+                <button class="date-nav-btn" id="prevDateBtn">&lt;</button>
+                <input type="date" class="date-display" id="dateInput">
+                <button class="date-nav-btn" id="nextDateBtn">&gt;</button>
+            </div>
+
+            <div class="input-section">
+                <input type="text" id="itemInput" placeholder="아이템을 입력하세요...">
+                <button id="addBtn">추가</button>
+            </div>
+
+            <div class="list-container" id="listContainer">
+                <div class="empty-message">아이템을 추가해 주세요</div>
+            </div>
+
+            <div class="stats" id="stats"></div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -292,9 +494,26 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJidm93cWJtZmNtYXJidXdleGNuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg4Mzc3MDIsImV4cCI6MjA4NDQxMzcwMn0.MWoWh7ttPnUhYnb5wb4a2gprwN2P3ROOZRVZupfSc64';
         const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        // DOM 요소 캐싱
+        // DOM 요소
         const elements = {
-            input: document.getElementById('itemInput'),
+            // Auth
+            authSection: document.getElementById('authSection'),
+            authForm: document.getElementById('authForm'),
+            authTitle: document.getElementById('authTitle'),
+            emailInput: document.getElementById('emailInput'),
+            passwordInput: document.getElementById('passwordInput'),
+            authSubmitBtn: document.getElementById('authSubmitBtn'),
+            authToggleText: document.getElementById('authToggleText'),
+            authToggleLink: document.getElementById('authToggleLink'),
+            authError: document.getElementById('authError'),
+            // App
+            appSection: document.getElementById('appSection'),
+            userEmail: document.getElementById('userEmail'),
+            logoutBtn: document.getElementById('logoutBtn'),
+            dateInput: document.getElementById('dateInput'),
+            prevDateBtn: document.getElementById('prevDateBtn'),
+            nextDateBtn: document.getElementById('nextDateBtn'),
+            itemInput: document.getElementById('itemInput'),
             addBtn: document.getElementById('addBtn'),
             listContainer: document.getElementById('listContainer'),
             stats: document.getElementById('stats'),
@@ -302,57 +521,163 @@
         };
 
         // 상태 관리
+        let currentUser = null;
         let items = [];
+        let selectedDate = new Date().toISOString().split('T')[0];
+        let isLoginMode = true;
         let isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-        // HTML 이스케이프 (XSS 방지)
+        // 유틸리티 함수
         const escapeHtml = (text) => {
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
         };
 
-        // 테마 적용
+        const formatDate = (dateStr) => {
+            const date = new Date(dateStr);
+            const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' };
+            return date.toLocaleDateString('ko-KR', options);
+        };
+
+        // 테마 관리
         const applyTheme = () => {
             if (isDarkMode) {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 elements.themeToggle.textContent = '☀️';
-                elements.themeToggle.title = '라이트 모드로 변경';
             } else {
                 document.documentElement.removeAttribute('data-theme');
                 elements.themeToggle.textContent = '🌙';
-                elements.themeToggle.title = '다크 모드로 변경';
             }
         };
 
-        // 테마 토글
         const toggleTheme = () => {
             isDarkMode = !isDarkMode;
             localStorage.setItem('darkMode', isDarkMode);
             applyTheme();
         };
 
-        // 로딩 표시
+        // 인증 UI 관리
+        const showAuthError = (message) => {
+            elements.authError.textContent = message;
+            elements.authError.classList.remove('hidden');
+        };
+
+        const hideAuthError = () => {
+            elements.authError.classList.add('hidden');
+        };
+
+        const toggleAuthMode = () => {
+            isLoginMode = !isLoginMode;
+            hideAuthError();
+            if (isLoginMode) {
+                elements.authTitle.textContent = '로그인';
+                elements.authSubmitBtn.textContent = '로그인';
+                elements.authToggleText.textContent = '계정이 없으신가요?';
+                elements.authToggleLink.textContent = '회원가입';
+            } else {
+                elements.authTitle.textContent = '회원가입';
+                elements.authSubmitBtn.textContent = '회원가입';
+                elements.authToggleText.textContent = '이미 계정이 있으신가요?';
+                elements.authToggleLink.textContent = '로그인';
+            }
+        };
+
+        const showApp = (user) => {
+            currentUser = user;
+            elements.authSection.classList.add('hidden');
+            elements.appSection.classList.remove('hidden');
+            elements.userEmail.textContent = user.email;
+            elements.dateInput.value = selectedDate;
+            loadItems();
+        };
+
+        const showAuth = () => {
+            currentUser = null;
+            elements.appSection.classList.add('hidden');
+            elements.authSection.classList.remove('hidden');
+            elements.emailInput.value = '';
+            elements.passwordInput.value = '';
+        };
+
+        // 인증 함수
+        const handleAuth = async (e) => {
+            e.preventDefault();
+            hideAuthError();
+
+            const email = elements.emailInput.value.trim();
+            const password = elements.passwordInput.value;
+
+            if (!email || !password) {
+                showAuthError('이메일과 비밀번호를 입력해주세요.');
+                return;
+            }
+
+            elements.authSubmitBtn.disabled = true;
+
+            try {
+                let result;
+                if (isLoginMode) {
+                    result = await supabaseClient.auth.signInWithPassword({ email, password });
+                } else {
+                    result = await supabaseClient.auth.signUp({ email, password });
+                }
+
+                if (result.error) {
+                    throw result.error;
+                }
+
+                if (!isLoginMode && result.data.user && !result.data.session) {
+                    showAuthError('회원가입 완료! 이메일을 확인해주세요.');
+                }
+            } catch (error) {
+                console.error('Auth error:', error);
+                if (error.message.includes('Invalid login')) {
+                    showAuthError('이메일 또는 비밀번호가 올바르지 않습니다.');
+                } else if (error.message.includes('already registered')) {
+                    showAuthError('이미 등록된 이메일입니다.');
+                } else {
+                    showAuthError(error.message || '인증 오류가 발생했습니다.');
+                }
+            } finally {
+                elements.authSubmitBtn.disabled = false;
+            }
+        };
+
+        const handleLogout = async () => {
+            await supabaseClient.auth.signOut();
+            showAuth();
+        };
+
+        // 날짜 관리
+        const changeDate = (days) => {
+            const date = new Date(selectedDate);
+            date.setDate(date.getDate() + days);
+            selectedDate = date.toISOString().split('T')[0];
+            elements.dateInput.value = selectedDate;
+            loadItems();
+        };
+
+        // 아이템 로드
         const showLoading = () => {
             elements.listContainer.innerHTML = '<div class="empty-message">로딩 중...</div>';
         };
 
-        // 에러 표시
-        const showError = (message) => {
-            elements.listContainer.innerHTML = `<div class="empty-message" style="color: #e53935;">${escapeHtml(message)}</div>`;
-        };
-
-        // Supabase에서 아이템 불러오기
         const loadItems = async () => {
+            if (!currentUser) return;
+
             showLoading();
+
             const { data, error } = await supabaseClient
                 .from('shopping_items')
                 .select('*')
+                .eq('user_id', currentUser.id)
+                .eq('shopping_date', selectedDate)
                 .order('created_at', { ascending: true });
 
             if (error) {
                 console.error('Error loading items:', error);
-                showError('데이터를 불러오는데 실패했습니다.');
+                elements.listContainer.innerHTML = '<div class="empty-message" style="color: #e53935;">데이터를 불러오는데 실패했습니다.</div>';
                 return;
             }
 
@@ -384,15 +709,21 @@
 
         // 아이템 추가
         const addItem = async () => {
-            const text = elements.input.value.trim();
+            if (!currentUser) return;
 
+            const text = elements.itemInput.value.trim();
             if (text === '') return;
 
             elements.addBtn.disabled = true;
 
             const { data, error } = await supabaseClient
                 .from('shopping_items')
-                .insert([{ text, checked: false }])
+                .insert([{
+                    text,
+                    checked: false,
+                    user_id: currentUser.id,
+                    shopping_date: selectedDate
+                }])
                 .select()
                 .single();
 
@@ -406,8 +737,8 @@
 
             items.push(data);
             renderList();
-            elements.input.value = '';
-            elements.input.focus();
+            elements.itemInput.value = '';
+            elements.itemInput.focus();
         };
 
         // 아이템 토글
@@ -447,19 +778,31 @@
             renderList();
         };
 
-        // 이벤트 리스너 등록
+        // 이벤트 리스너
         const initEventListeners = () => {
-            // 추가 버튼 클릭
-            elements.addBtn.addEventListener('click', addItem);
+            // 테마 토글
+            elements.themeToggle.addEventListener('click', toggleTheme);
 
-            // Enter 키 입력
-            elements.input.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    addItem();
-                }
+            // 인증
+            elements.authForm.addEventListener('submit', handleAuth);
+            elements.authToggleLink.addEventListener('click', toggleAuthMode);
+            elements.logoutBtn.addEventListener('click', handleLogout);
+
+            // 날짜
+            elements.prevDateBtn.addEventListener('click', () => changeDate(-1));
+            elements.nextDateBtn.addEventListener('click', () => changeDate(1));
+            elements.dateInput.addEventListener('change', (e) => {
+                selectedDate = e.target.value;
+                loadItems();
             });
 
-            // 이벤트 위임: 리스트 컨테이너에서 클릭 이벤트 처리
+            // 아이템
+            elements.addBtn.addEventListener('click', addItem);
+            elements.itemInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') addItem();
+            });
+
+            // 리스트 이벤트 위임
             elements.listContainer.addEventListener('click', (e) => {
                 const target = e.target;
                 const action = target.dataset.action;
@@ -475,19 +818,30 @@
                     deleteItem(id);
                 }
             });
-
-            // 테마 토글 버튼
-            elements.themeToggle.addEventListener('click', toggleTheme);
         };
 
         // 앱 초기화
         const init = async () => {
             applyTheme();
             initEventListeners();
-            await loadItems();
+
+            // 인증 상태 변경 리스너
+            supabaseClient.auth.onAuthStateChange((event, session) => {
+                if (session?.user) {
+                    showApp(session.user);
+                } else {
+                    showAuth();
+                }
+            });
+
+            // 현재 세션 확인
+            const { data: { session } } = await supabaseClient.auth.getSession();
+            if (session?.user) {
+                showApp(session.user);
+            }
         };
 
-        // DOMContentLoaded 시 초기화
+        // 초기화
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
         } else {
